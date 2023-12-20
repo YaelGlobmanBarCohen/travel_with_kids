@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blog</title>
+    </head>
+    <body>
+        <!-- Header -->
+        <%- include("partials/header.ejs") %>
+        
+        <!-- forms to fill -->
+        <section id="forms">
+            <form action="/save_track" method="POST">
+                <div class="mb-3">
+                    <label for="FormControlInputTrackName" class="form-label">Track name</label>
+                    <input type="text" class="form-control" name="trip_name">
+                </div>
+                <div class="mb-3">
+                    <label for="FormControlInputTracArea" class="form-label">Track description</label>
+                    <input type="text" class="form-control" name="trip_story">
+                    <!-- <textarea class="form-control" name="trip_story" rows="7"></textarea> -->
+                </div>
+                <input type="submit" class="btn btn-lg bd-btn-lg btn-outline-secondary" value="Save">
+            </form>
+        </section>
+
+        <!-- Footer -->
+        <%- include("partials/footer.ejs") %>
+    </body>
+</html>

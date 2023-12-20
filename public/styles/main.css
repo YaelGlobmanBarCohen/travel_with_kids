@@ -1,0 +1,24 @@
+#header, #footer{
+    background-color: #DED0B6;
+}
+
+#header .grayLetters{
+    color: #607274;
+    font-weight: bold;
+}
+
+#first_track, #all_track{
+    margin-top: 100px;
+}
+
+#title, #first_track, #all_track, #forms{
+    margin-top: 40px;
+    margin-left: 60px;
+    margin-right: 300px;
+    padding: 20px;
+}
+
+.button{
+    margin-top: 100px;
+    margin-left: 60px;
+}
