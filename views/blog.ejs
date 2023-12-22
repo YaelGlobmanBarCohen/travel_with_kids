@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel with Kids</title>
+</head>
+<body>
+    <!-- Header -->
+    <%- include("partials/header.ejs") %>
+    
+    <!-- Title -->
+    <section id="title" class="content">
+        <div>
+            <h1>Our first "travel with kids"</h1>
+            <p>
+                As a young couple, we enjoyed to track all around the world. 
+                When we thought about having family of our own, we knew it wouldn't stop from tracking.
+                When I was pregnant with our first son, Tsuf, we did the TMB- Tour du mont blanc.
+                Our families and friends thought it's a bad idea and that it's not possible and dangerous doing it in my condition,
+                but we did it anyway, when I was in the 25-27th weeks of my pregnancy. 
+                It was an-forgetable track that we'll never forget.
+            </p>
+            <p>
+                In this website I'll write about some of the tracks that we did as a family with little kids.
+                If you made some tracks with kids yourself you're more than welcome to write about them to, 
+                so everyone could read about it and have an inspiration.
+            </p>
+        </div>
+    </section>
+
+    <!-- First Track -->
+    <!-- TODO Yael- it needs to be in another file in the db -->
+    <section id="first_track">
+        <div>
+            <h2>North Italy</h2>
+            <p>
+                <!-- TODO Yael- need to be continued -->
+                When Tsuf was half year old, we made an almost 2 weeks trip in the north of Italy.
+            </p>
+        </div>
+    </section>
+
+    <!-- All Tracks -->
+
+    <section id="all_track">
+        <div>
+            <% if(locals.tripName){ %>
+                <h2><%=tripName%></h2>
+            <%}%>
+
+            <% if(locals.tripStory){ %>
+                <p><%=tripStory%></p>
+            <%}%>
+        </div>
+    </section>
+
+
+
+
+    <!-- Add button -->
+    <form action="/add_track" method="GET">
+        <input type="submit" class="button btn btn-lg bd-btn-lg btn-outline-secondary" value="Add a track">
+    </form>
+
+    <!-- Footer -->
+    <%- include("partials/footer.ejs") %>
+</body>
+</html>

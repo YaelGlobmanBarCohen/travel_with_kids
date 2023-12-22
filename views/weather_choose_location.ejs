@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel with Kids</title>
+</head>
+    <body>
+        <!-- Header -->
+        <%- include("partials/header.ejs") %>
+
+        <form action="/weather" method="POST" class="content location-form">
+            <h1 class="h3 mb-3 fw-normal">Where do you travel?</h1>
+        
+            <div class="form-floating">
+              <input type="latitude" class="form-control" id="floatingLatitude" placeholder="name@example.com">
+              <label for="floatingInput">Latitude</label>
+            </div>
+            <div class="form-floating">
+              <input type="longitude" class="form-control" id="floatingLongitude" placeholder="Password">
+              <label for="floatingPassword">Longitude</label>
+            </div>
+        
+            <input type="submit" class="button btn btn-lg bd-btn-lg btn-outline-secondary" value="Check Weather">
+          </form>
+
+        <!-- Footer -->
+        <%- include("partials/footer.ejs") %>
+    </body>
+</html>
