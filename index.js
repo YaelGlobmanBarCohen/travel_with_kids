@@ -1,5 +1,8 @@
+import dotenv from 'dotenv';
+dotenv.config();
 import express from "express";
 import bodyParser from "body-parser";
+import axios from "axios";
 
 const app = express();
 const port = 3000;
@@ -14,7 +17,7 @@ app.get("/", (req, res) => {
   });
 
 app.get("/add_track", (req, res) => {
-    res.render("add_track.ejs");
+    res.render("blog_add_track.ejs");
 });
 
 app.get("/enter_blog", (req, res) => {
@@ -55,7 +58,13 @@ app.post("/save_track", (req, res) => {
 // TODO yael- just wrote it, didn't test it yet
 app.post("/weather", async (req, res) => {
     try {
-        const result = await axios.get(API_URL + "/compact?lat=" + req.body["lat"] + "&lon=" + req.body["lon"]);
+        var tmp = Number((req.body["lat"]).toFixed(2));
+        console.log(tmp);
+        var lat = getDoubleNumber(req.body["lat"]);
+        var lon = getDoubleNumber(req.body["lon"]);
+        var url = API_WEATHER_URL + "/compact?lat=" + lat + "&lon=" + lon;
+        console.log("the weather url is: " + url);
+        const result = await axios.get(url);
         console.log(result.data);
         res.render("weather.ejs", {
             air_temperature: result.properties.timeseries[0].data.air_temperature,
@@ -68,7 +77,12 @@ app.post("/weather", async (req, res) => {
     }
   });
   
-
+function getDoubleNumber(num){
+    if(num === parseInt(num, 10)){
+        num = Number(num.toFixed(2));
+    }
+    return num;
+}
 
 
 app.listen(port, () => {
