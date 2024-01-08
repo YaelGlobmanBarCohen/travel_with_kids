@@ -9,20 +9,39 @@
         <!-- Header -->
         <%- include("partials/header.ejs") %>
 
-        <form action="/weather" method="POST" class="content location-form">
+
+        <!-- just for checking if the api itself is working, delete it later and replace with the next lines -->
+        <h1 class="h3 mb-3 fw-normal">Where do you travel?</h1>
+
+        <form action="/weather" method="POST">
+          <div class="mb-3">
+              <label for="FormControlInputTrackName" class="form-label">Track name</label>
+              <input type="text" class="form-control" name="lat">
+          </div>
+          <div class="mb-3">
+              <label for="FormControlInputTracArea" class="form-label">Track description</label>
+              <input type="text" class="form-control" name="lon">
+          </div>
+          <input type="submit" class="btn btn-lg bd-btn-lg btn-outline-secondary" value="Save">
+      </form>
+
+
+
+        <!-- Content -->
+        <!-- <form action="/weather" method="POST" class="content location-form">
             <h1 class="h3 mb-3 fw-normal">Where do you travel?</h1>
         
             <div class="form-floating">
-              <input type="latitude" class="form-control" id="floatingLatitude" placeholder="name@example.com">
+              <input type="text" class="form-control" id="floatingLatitude" placeholder="name@example.com" name="lat">
               <label for="floatingInput">Latitude</label>
             </div>
             <div class="form-floating">
-              <input type="longitude" class="form-control" id="floatingLongitude" placeholder="Password">
+              <input type="text" class="form-control" id="floatingLongitude" placeholder="Password" name="lon">
               <label for="floatingPassword">Longitude</label>
             </div>
         
             <input type="submit" class="button btn btn-lg bd-btn-lg btn-outline-secondary" value="Check Weather">
-          </form>
+          </form> -->
 
         <!-- Footer -->
         <%- include("partials/footer.ejs") %>
